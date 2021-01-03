@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 🎃 최대값과 최솟값 구하기
+
+        const a = [10, 20, 30, 1, 2, 3, 4, 7, 9]
+
+        a.sort()
+        console.log(a)
+
+        // 내장함수 Math 이용
+        console.log(Math.max.apply(null, a));
+        console.log(Math.min.apply(null, a));
+        // 이는 Math.max(a[0], ...) 또는 Math.max(5, 6, ...)
+        // 와 거의 같음
+        
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

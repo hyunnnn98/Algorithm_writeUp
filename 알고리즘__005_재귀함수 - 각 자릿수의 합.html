@@ -5,33 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        // 재귀함수를 이용하여 문자열 뒤집기
+        // 재귀함수를 이용하여 각 자릿수의 합
 
-        let result = ''
-        let x = 'SeungHyun'
+        let result = 0
+        let x = '123123'
 
         while(true) {
             if ( x.length === 1 ) {
-                result += x
+                result += parseInt(x, 10)       // int 형으로 변환과 동시에 10진법 적용.
                 break;
             }
 
             y = x.split('')
-            console.log(y)
-            result += String(y.pop())
+            // console.log(y)
+            result += parseInt(y.pop(), 10)
             x = y.join('')
-            console.log(x)
+            // console.log(x)
         }
 
         // 거꾸로 출력.
         console.log(result)
-        console.log(result.split('').reverse().join(''))
+        // console.log(result.split('').reverse().join(''))
 
         // 재귀함수로 풀기
 
         function 문자열역순(argString) {
             if (argString.length === 1) {
-                return argString
+                return parseInt(argString, 10)
             }
 
             `
@@ -49,10 +49,10 @@
 
             // 위에 방법과 달리 조금 더 간단하게 풀 수 있다..
             // slice 를 활용하여 원하는 String 값 가져오기
-            return argString[argString.length - 1] + 문자열역순(argString.slice(0, argString.length - 1))
+            return parseInt(argString[argString.length - 1], 10) + 문자열역순(argString.slice(0, argString.length - 1))
         }
 
-        console.log(문자열역순('kokohaseyo'))
+        console.log(문자열역순('123123'))
 
     </script>
 </head>

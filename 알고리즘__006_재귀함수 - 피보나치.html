@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 재귀함수를 이용하여 피보나치 순열 구현
+
+        // 🎃 반복문 버전
+        let firstValue  = 1
+        let secondValue = 1
+        
+        for(let i = 0; i < 6; i++) {
+            temp        = firstValue + secondValue
+            firstValue  = secondValue
+            secondValue = temp
+        }
+        
+        console.log(secondValue)
+        
+        // 🎃 재귀함수 버전
+        function 피보나치(argCount) {
+            if (argCount === 1 || argCount === 0) {
+                return 1
+            }
+
+            return 피보나치(argCount - 1) + 피보나치(argCount - 2)
+        }
+
+        console.log(피보나치(7))
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

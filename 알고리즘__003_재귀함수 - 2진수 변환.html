@@ -11,7 +11,7 @@
         let x = 11
 
         while(true) {
-            if ( x % 2 == 0 ) {
+            if ( x % 2 === 0 ) {
                 result += '0'
             } else {
                 result += '1'
@@ -23,7 +23,7 @@
             // Math.floor() : 소수점 버림
             // Math.round() : 소수점 반올림
 
-            if ( x == 1 || x == 0 ) {
+            if ( x === 1 || x === 0 ) {
                 result += String(x)
                 break;
             }
@@ -35,7 +35,7 @@
         // 재귀함수로 풀기
 
         function 이진법(argNumber) {
-            if (argNumber == 0 || argNumber == 1) {
+            if (argNumber === 0 || argNumber === 1) {
                 return String(argNumber)
             }
 
