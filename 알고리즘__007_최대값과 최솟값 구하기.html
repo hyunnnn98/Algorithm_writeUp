@@ -17,6 +17,15 @@
         console.log(Math.min.apply(null, a));
         // 이는 Math.max(a[0], ...) 또는 Math.max(5, 6, ...)
         // 와 거의 같음
+
+        let m = a[0]
+        for (let variable of a) {
+            if(variable > m) {
+                m = variable
+            }
+        }
+
+        console.log(m)
         
 
 

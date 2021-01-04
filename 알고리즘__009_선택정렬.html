@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 🎃 선택 정렬
+
+        let a = [10, 20, 30, 1, 2, 3, 4, 7, 9]
+        
+        let sortedArray = []
+
+        // 여기서 반복문 순회할때 a.length 를 걸면 안된다!!!
+        // a 는 순회하면서 splice 되기 때문에 전체 length 가 유동적으로 변하기 때문에 사용하면 X 
+        for (let i = 0; i < 9; i++) {
+            sortedArray.push(Math.min.apply(null, a))
+
+            // 🎨 내장함수 pop, push, shift, unshift 정리하기 
+            a.splice(a.indexOf(Math.min.apply(null, a)), 1)
+            console.log(a)
+            console.log(sortedArray)
+        }
+        
+
+        // TODO while문 사용하여 문제풀어보기
+        while(a.length != 0) {
+            sortedArray.push(Math.min.apply(null, a))
+
+            // 🎨 내장함수 pop, push, shift, unshift 정리하기 
+            a.splice(a.indexOf(Math.min.apply(null, a)), 1)
+            console.log(a)
+            console.log(sortedArray)
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html
