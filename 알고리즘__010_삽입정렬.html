@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 🎃 삽입 정렬
+
+        let inputValues = [10, 20, 30, 1, 6, 33, 4, 11, 9]
+        
+        let sortedArray = []
+        let lengthOfArray = inputValues.length
+
+        function numberOfIndex(argSortedArray, argInputValue) {
+            for (var i in argSortedArray) {
+                if (argInputValue < argSortedArray[i]) {
+                    return i
+                }
+            }
+
+            // 정렬된 배열의 값 보다 작지 않을 경우 마지막 index 넘겨주기
+            return argSortedArray.length
+        }
+
+        for (let i = 0; i < lengthOfArray; i++) {
+            inputValue = inputValues.shift()    // 가장 첫번째 값 꺼내오기
+            index = numberOfIndex(sortedArray, inputValue)
+            sortedArray.splice(index, 0, inputValue)
+            console.log(`인덱스 : ${index}`)
+            console.log(`정렬된 배열 : ${sortedArray}`)
+        }
+        
+
+    </script>
+</head>
+<body>
+</body>
+</html
