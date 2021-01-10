@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 🎃 병합 정렬
+
+        let 입력배열 = [10, 20, 30, 1, 6, 33, 4, 11, 9]
+        
+        function 병합정렬(입력배열) {
+            let 입력배열의길이 = 입력배열.length
+            let 결과값 = []
+            if ( 입력배열의길이 <= 1 ) {
+                return 입력배열
+            }
+
+            let 중간값 = parseInt(입력배열의길이 / 2)
+
+            // 재귀함수
+            let 그룹하나 = 병합정렬(입력배열.slice(0, 중간값))
+            let 그룹둘 = 병합정렬(입력배열.slice(중간값, ))
+
+            while(그룹하나.length !== 0 && 그룹둘.length !== 0) {
+            //     if (그룹하나[0] < 그룹둘[0]) {
+            //         결과값.push(그룹하나.shift())
+            //     } else {
+            //         결과값.push(그룹둘.shift())
+            //     }
+
+                그룹하나[0] < 그룹둘[0] ? 결과값.push(그룹하나.shift()) : 결과값.push(그룹둘.shift())
+            }
+
+            while(그룹하나.length !== 0) {
+                결과값.push(그룹하나.shift())
+            }
+
+            while(그룹둘.length !== 0) {
+                결과값.push(그룹둘.shift())
+            }
+
+            return 결과값
+        }
+        
+        console.log(병합정렬(입력배열))
+
+    </script>
+</head>
+<body>
+</body>
+</html
