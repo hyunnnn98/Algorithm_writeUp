@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 🎃 퀵 정렬
+        // 퀵 정렬과 병합정렬의 다른점은 피벗값의 유무다.
+        // (worst - 0(nlog2n), best - 0(n**2))
+
+        let 입력값 = [10, 20, 30, 1, 6, 33, 4, 11, 9]
+        
+        function 퀵정렬(입력배열) {
+            let 입력배열의길이 = 입력배열.length
+
+            // 여기 구문이 가장 핵심이다.
+            // 재귀함수로 수행된 concat이 합쳐지는 조건이
+            // 전부다 길이가 1인 배열로 나올때 성립되기 때문에 최종적으로는 [], [], [], [] 의 형태가
+            // 재귀형태로 타고타고 들어와서 합쳐지는거임 !!!!!
+            if (입력배열의길이 <= 1) {
+                return 입력배열
+            }
+
+            let 피벗값 = [입력배열.shift()]
+            let 그룹하나 = []
+            let 그룹둘 = []
+
+            for(let i in 입력배열) {
+                if ( 입력배열[i] < 피벗값) {
+                    그룹하나.push(입력배열[i])
+                } else {
+                    그룹둘.push(입력배열[i])
+                }
+            }
+
+            console.log(`그룹하나 : ${그룹하나}\n 그룹둘 : ${그룹둘}\n 피벗값 : ${피벗값}\n `)
+            return 퀵정렬(그룹하나).concat(피벗값, 퀵정렬(그룹둘))
+        }
+
+        console.log(퀵정렬(입력값))
+
+    </script>
+</head>
+<body>
+</body>
+</html
