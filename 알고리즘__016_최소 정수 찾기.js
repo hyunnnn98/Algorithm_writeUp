@@ -27,9 +27,12 @@ function solution(A) {
     let answer = 0
 
     for (let i = 0; i < A.length; i++) {
-        if (answer < 0 && answer < A[i]) {
+        if (A[i] > 100000 || A[i] < -100000) {
+            return 1
+        }
+        if (answer <= 0 && answer < A[i]) {
             answer = A[i]
-        } else if (answer >= 0 && answer < A[i] && answer + 1 == A[i]) {
+        } else if (answer > 0 && answer < A[i] && answer + 1 == A[i]) {
             answer = A[i]
         }
     }
@@ -37,4 +40,4 @@ function solution(A) {
     return answer + 1
 }
 
-console.log(solution([-1, -3]))
+console.log(solution([94]))
